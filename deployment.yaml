@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-httpd-deployment
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: my-httpd
+  template:
+    metadata:
+      labels:
+        app: my-httpd
+    spec:
+      containers:
+      - name: my-httpd-container
+        image: amol1701/mywebsite
+
